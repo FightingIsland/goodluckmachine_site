@@ -8,10 +8,11 @@
 
 :root {
   --paper: #f1eee5;
-  --ink: #0b0b0a;
-  --blue: #164fc9;
-  --red: #f2380f;
-  --mustard: #efae00;
+  --ink: #24242a;
+  --blue: #1858b8;
+  --green: #26934d;
+  --orange: #e48345;
+  --mustard: #e9bd32;
   --white: #fffdf7;
   --line: 3px solid var(--ink);
   --pad: clamp(1rem, 3.2vw, 3.5rem);
@@ -158,7 +159,7 @@ h1,
 h2,
 h3 {
   font-weight: 900;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.0475em;
   text-transform: uppercase;
 }
 
@@ -184,8 +185,7 @@ h3 {
   position: relative;
   display: grid;
   min-height: 660px;
-  grid-template-columns: minmax(0, 3fr) minmax(170px, 0.8fr);
-  gap: 3vw;
+  grid-template-columns: 1fr;
   align-items: center;
   padding: 7.2rem var(--pad) 4.5rem;
   overflow: hidden;
@@ -196,42 +196,16 @@ h3 {
 .hero-copy {
   position: relative;
   z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.65fr);
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: center;
 }
 
 .hero-intro {
   max-width: 590px;
-  margin: 2.3rem 0 0 19%;
+  margin: 0;
   font-size: clamp(1rem, 1.25vw, 1.25rem);
-}
-
-.hero-bars {
-  display: grid;
-  height: min(65vh, 470px);
-  grid-template-columns: repeat(4, 1fr);
-  align-self: end;
-  border: var(--line);
-  background: var(--ink);
-}
-
-.hero-bars span {
-  border-right: 2px solid var(--ink);
-}
-
-.hero-bars span:first-child {
-  background: var(--blue);
-}
-
-.hero-bars span:nth-child(2) {
-  background: var(--red);
-}
-
-.hero-bars span:nth-child(3) {
-  background: var(--mustard);
-}
-
-.hero-bars span:last-child {
-  border-right: 0;
-  background: var(--white);
 }
 
 .scroll-cue {
@@ -282,24 +256,13 @@ h3 {
   position: relative;
   display: grid;
   min-height: 500px;
-  grid-template-columns: 20% 50% 30%;
+  grid-template-columns: 20% 80%;
   align-items: center;
   padding: 3.5rem var(--pad);
   overflow: hidden;
   border-bottom: var(--line);
-  background: var(--ink);
+  background: var(--blue);
   color: var(--white);
-}
-
-.games::after {
-  position: absolute;
-  right: -7%;
-  bottom: -42%;
-  width: clamp(280px, 35vw, 520px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: var(--red);
-  content: "";
 }
 
 .games-copy {
@@ -320,37 +283,10 @@ h3 {
   font-size: clamp(1rem, 1.2vw, 1.18rem);
 }
 
-.games-mark {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  width: min(100%, 220px);
-  aspect-ratio: 1;
-  justify-self: end;
-  place-content: center;
-  border: 3px solid var(--white);
-  border-radius: 50%;
-  text-align: center;
-}
-
-.games-mark span:first-child {
-  font-size: clamp(2.4rem, 4vw, 4.5rem);
-  font-weight: 900;
-  letter-spacing: -0.07em;
-  line-height: 0.8;
-}
-
-.games-mark span:last-child {
-  margin-top: 0.55rem;
-  font-size: 0.55rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-}
-
 .about {
   padding: 3.5rem var(--pad);
   border-bottom: var(--line);
-  background: var(--red);
+  background: var(--orange);
 }
 
 .about-copy {
@@ -416,7 +352,12 @@ h3 {
 }
 
 .principle:nth-child(3) {
-  background: var(--mustard);
+  background: var(--green);
+  color: var(--white);
+}
+
+.principle:nth-child(3) .principle-number {
+  border-color: var(--white);
 }
 
 .contact {
@@ -424,8 +365,8 @@ h3 {
   min-height: 440px;
   grid-template-columns: 20% 80%;
   padding: 3.5rem var(--pad);
-  background: var(--blue);
-  color: var(--white);
+  background: var(--mustard);
+  color: var(--ink);
 }
 
 .contact-copy {
@@ -498,15 +439,10 @@ footer p {
 @media (max-width: 900px) {
   .hero {
     min-height: 610px;
-    grid-template-columns: minmax(0, 3fr) 120px;
   }
 
   .games {
-    grid-template-columns: 20% 55% 25%;
-  }
-
-  .games-mark {
-    width: min(100%, 170px);
+    grid-template-columns: 20% 80%;
   }
 
   .about-copy {
@@ -576,9 +512,8 @@ footer p {
     margin: 1.8rem 0 0;
   }
 
-  .hero-bars {
-    height: 72px;
-    margin: 2.5rem 0 1.5rem;
+  .hero-copy {
+    display: block;
   }
 
   .scroll-cue {
@@ -603,16 +538,6 @@ footer p {
   .about-copy h2,
   .contact-copy h2 {
     font-size: clamp(3.6rem, 17vw, 5.7rem);
-  }
-
-  .games-mark {
-    width: 145px;
-    margin: 2.5rem 0 0 auto;
-  }
-
-  .games::after {
-    right: -35%;
-    bottom: -28%;
   }
 
   .about {
