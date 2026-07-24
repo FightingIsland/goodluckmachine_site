@@ -10,7 +10,6 @@
   --paper: #f1eee5;
   --ink: #24242a;
   --blue: #1858b8;
-  --green: #26934d;
   --orange: #e48345;
   --mustard: #e9bd32;
   --white: #fffdf7;
@@ -81,45 +80,12 @@ p {
 }
 
 .wordmark {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 0.92;
+  font-size: 0.9rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
-}
-
-.brand-mark {
-  position: relative;
-  display: grid;
-  width: 2.25rem;
-  height: 2.25rem;
-  place-items: center;
-  border: 2px solid var(--ink);
-  border-radius: 50%;
-  background: var(--mustard);
-}
-
-.brand-mark i {
-  position: absolute;
-  width: 0.9rem;
-  height: 2px;
-  background: var(--ink);
-}
-
-.brand-mark i:first-child {
-  transform: rotate(45deg);
-}
-
-.brand-mark i:nth-child(2) {
-  transform: rotate(-45deg);
-}
-
-.brand-mark i:last-child {
-  transform: rotate(90deg);
 }
 
 .site-nav {
@@ -140,7 +106,9 @@ p {
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  border-color: var(--ink);
+  border-color: transparent;
+  background: var(--orange);
+  color: var(--white);
   outline: none;
 }
 
@@ -189,7 +157,6 @@ h3 {
   align-items: center;
   padding: 7.2rem var(--pad) 4.5rem;
   overflow: hidden;
-  border-bottom: var(--line);
   background: var(--paper);
 }
 
@@ -197,8 +164,8 @@ h3 {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(280px, 0.65fr);
-  gap: clamp(2rem, 5vw, 6rem);
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: clamp(1.5rem, 2.8vw, 3.5rem);
   align-items: center;
 }
 
@@ -247,7 +214,7 @@ h3 {
   width: 1.8rem;
   height: 1.8rem;
   place-items: center;
-  border: 1.5px solid currentColor;
+  border: 0;
   border-radius: 50%;
   font-size: 0.52rem;
 }
@@ -260,7 +227,11 @@ h3 {
   align-items: center;
   padding: 3.5rem var(--pad);
   overflow: hidden;
-  border-bottom: var(--line);
+  background: var(--orange);
+  color: var(--ink);
+}
+
+.games .section-label span:first-child {
   background: var(--blue);
   color: var(--white);
 }
@@ -285,8 +256,13 @@ h3 {
 
 .about {
   padding: 3.5rem var(--pad);
-  border-bottom: var(--line);
+  background: var(--blue);
+  color: var(--white);
+}
+
+.about .section-label span:first-child {
   background: var(--orange);
+  color: var(--ink);
 }
 
 .about-copy {
@@ -310,28 +286,20 @@ h3 {
 .principles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border: var(--line);
+  gap: clamp(1.5rem, 4vw, 5rem);
 }
 
 .principle {
   display: flex;
-  min-height: 290px;
+  min-height: 240px;
   flex-direction: column;
-  padding: 1.4rem;
-  border-right: var(--line);
-  background: var(--paper);
-}
-
-.principle:last-child {
-  border-right: 0;
+  padding: 0;
 }
 
 .principle-number {
   width: fit-content;
-  padding: 0.2rem 0.48rem;
-  border: 1.5px solid var(--ink);
-  border-radius: 2rem;
+  padding: 0;
+  border: 0;
   font-size: 0.54rem;
   font-weight: 500;
 }
@@ -347,19 +315,6 @@ h3 {
   font-size: 0.94rem;
 }
 
-.principle:nth-child(2) {
-  background: var(--white);
-}
-
-.principle:nth-child(3) {
-  background: var(--green);
-  color: var(--white);
-}
-
-.principle:nth-child(3) .principle-number {
-  border-color: var(--white);
-}
-
 .contact {
   display: grid;
   min-height: 440px;
@@ -367,6 +322,11 @@ h3 {
   padding: 3.5rem var(--pad);
   background: var(--mustard);
   color: var(--ink);
+}
+
+.contact .section-label span:first-child {
+  background: var(--blue);
+  color: var(--white);
 }
 
 .contact-copy {
@@ -399,6 +359,30 @@ h3 {
 
 .email-link:hover span:last-child {
   transform: translate(3px, -3px);
+}
+
+.support-callout {
+  display: flex;
+  width: min(100%, 680px);
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+}
+
+.support-callout > span {
+  font-weight: 500;
+}
+
+.support-callout a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.support-callout a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 footer {
@@ -558,13 +542,7 @@ footer p {
   }
 
   .principle {
-    min-height: 230px;
-    border-right: 0;
-    border-bottom: var(--line);
-  }
-
-  .principle:last-child {
-    border-bottom: 0;
+    min-height: 200px;
   }
 
   .contact {
@@ -574,6 +552,12 @@ footer p {
   .email-link {
     margin-top: 2rem;
     overflow-wrap: anywhere;
+  }
+
+  .support-callout {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
   }
 
   footer {
