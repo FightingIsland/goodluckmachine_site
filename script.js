@@ -33,10 +33,4 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
 
-const playObject = document.querySelector(".play-object");
-playObject?.addEventListener("click", () => {
-  const isPressed = playObject.classList.toggle("pressed");
-  playObject.setAttribute("aria-pressed", String(isPressed));
-});
-
 document.querySelector("#year").textContent = new Date().getFullYear();
