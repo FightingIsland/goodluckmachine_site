@@ -1,20 +1,22 @@
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".site-nav");
 
+function closeMenu() {
+  navigation?.classList.remove("open");
+  menuButton?.setAttribute("aria-expanded", "false");
+  if (menuButton) menuButton.textContent = "Menu";
+  document.body.style.overflow = "";
+}
+
 menuButton?.addEventListener("click", () => {
   const isOpen = navigation.classList.toggle("open");
   menuButton.setAttribute("aria-expanded", String(isOpen));
-  menuButton.querySelector("span").textContent = isOpen ? "Close" : "Menu";
+  menuButton.textContent = isOpen ? "Close" : "Menu";
   document.body.style.overflow = isOpen ? "hidden" : "";
 });
 
 navigation?.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    navigation.classList.remove("open");
-    menuButton?.setAttribute("aria-expanded", "false");
-    if (menuButton) menuButton.querySelector("span").textContent = "Menu";
-    document.body.style.overflow = "";
-  });
+  link.addEventListener("click", closeMenu);
 });
 
 const observer = new IntersectionObserver(
@@ -30,4 +32,11 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
+
+const playObject = document.querySelector(".play-object");
+playObject?.addEventListener("click", () => {
+  const isPressed = playObject.classList.toggle("pressed");
+  playObject.setAttribute("aria-pressed", String(isPressed));
+});
+
 document.querySelector("#year").textContent = new Date().getFullYear();
