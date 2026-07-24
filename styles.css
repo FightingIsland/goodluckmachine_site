@@ -9,6 +9,7 @@
 :root {
   --paper: #f1eee6;
   --ink: #24242a;
+  --blue: #2050bb;
   --green: #469b49;
   --orange: #e98030;
   --yellow: #e1b43d;
@@ -80,12 +81,21 @@ p {
 }
 
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   font-size: 0.9rem;
   font-weight: 900;
   letter-spacing: -0.025em;
   line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.wordmark img {
+  display: block;
+  width: 3rem;
+  height: auto;
 }
 
 .site-nav {
@@ -138,7 +148,7 @@ h1 {
 }
 
 h1 span {
-  color: var(--green);
+  color: var(--blue);
 }
 
 h2 {
@@ -216,6 +226,8 @@ h3 {
   place-items: center;
   border: 0;
   border-radius: 50%;
+  background: var(--paper);
+  color: var(--ink);
   font-size: 0.52rem;
 }
 
@@ -227,12 +239,7 @@ h3 {
   align-items: center;
   padding: 3.5rem var(--pad);
   overflow: hidden;
-  background: var(--orange);
-  color: var(--ink);
-}
-
-.games .section-label span:first-child {
-  background: var(--green);
+  background: var(--blue);
   color: var(--paper);
 }
 
@@ -260,16 +267,7 @@ h3 {
   color: var(--paper);
 }
 
-.about .section-label span:first-child {
-  background: var(--orange);
-  color: var(--ink);
-}
-
 .about-copy {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 5vw;
-  align-items: end;
   margin: 2.75rem 0 3.5rem 20%;
 }
 
@@ -279,7 +277,7 @@ h3 {
 
 .about-copy p {
   max-width: 570px;
-  margin-bottom: 0;
+  margin: 1.75rem 0 0;
   font-size: clamp(1rem, 1.4vw, 1.35rem);
 }
 
@@ -290,11 +288,6 @@ h3 {
   padding: 3.5rem var(--pad);
   background: var(--yellow);
   color: var(--ink);
-}
-
-.contact .section-label span:first-child {
-  background: var(--green);
-  color: var(--paper);
 }
 
 .contact-copy {
