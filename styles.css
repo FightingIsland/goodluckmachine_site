@@ -323,29 +323,12 @@ h3 {
   transform: translate(3px, -3px);
 }
 
-.support-callout {
-  display: flex;
-  width: min(100%, 680px);
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1.5rem;
-  font-size: clamp(1rem, 1.8vw, 1.55rem);
-  font-weight: 600;
+.contact-copy > .support-prompt {
+  margin: 2.3rem 0 0;
 }
 
-.support-callout > span {
-  font-weight: 600;
-}
-
-.support-callout a {
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.support-callout a:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.2em;
+.support-prompt + .email-link {
+  margin-top: 1rem;
 }
 
 footer {
@@ -517,12 +500,6 @@ footer p {
   .email-link {
     margin-top: 2rem;
     overflow-wrap: anywhere;
-  }
-
-  .support-callout {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.35rem;
   }
 
   footer {
