@@ -22,12 +22,19 @@
 }
 
 html {
+  width: 100%;
+  max-width: 100%;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
+  width: 100%;
+  max-width: 100%;
   margin: 0;
   overflow-x: hidden;
+  overflow-x: clip;
   background: var(--paper);
   color: var(--ink);
   font-family: "Geist", system-ui, sans-serif;
@@ -35,6 +42,13 @@ body {
   line-height: 1.55;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+main,
+section,
+footer {
+  width: 100%;
+  max-width: 100%;
 }
 
 a {
@@ -90,6 +104,7 @@ p {
 
 .wordmark {
   display: inline-flex;
+  min-width: 0;
   align-items: center;
   gap: 0.65rem;
   font-size: 0.9rem;
@@ -182,6 +197,7 @@ h3 {
   position: relative;
   z-index: 2;
   display: grid;
+  min-width: 0;
   grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
   gap: clamp(1.5rem, 2.8vw, 3.5rem);
   align-items: center;
@@ -254,6 +270,7 @@ h3 {
 .games-copy {
   position: relative;
   z-index: 2;
+  min-width: 0;
 }
 
 .games-copy h2,
@@ -295,6 +312,7 @@ h3 {
 }
 
 .contact-copy {
+  min-width: 0;
   max-width: 900px;
 }
 
@@ -305,6 +323,8 @@ h3 {
 .email-link {
   display: flex;
   width: min(100%, 680px);
+  min-width: 0;
+  max-width: 100%;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -313,6 +333,12 @@ h3 {
   font-size: clamp(1rem, 1.8vw, 1.55rem);
   font-weight: 600;
   text-decoration: none;
+}
+
+.email-link span:first-child {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .email-link span:last-child {
@@ -392,6 +418,10 @@ footer p {
 
 @media (max-width: 700px) {
   .site-header {
+    right: 0;
+    left: 0;
+    width: auto;
+    max-width: 100%;
     padding: 1rem;
   }
 
@@ -498,6 +528,8 @@ footer p {
   }
 
   .email-link {
+    width: 100%;
+    max-width: 100%;
     margin-top: 2rem;
     overflow-wrap: anywhere;
   }
@@ -510,6 +542,17 @@ footer p {
 
   footer p {
     text-align: left;
+  }
+}
+
+@media (max-width: 360px) {
+  .wordmark {
+    gap: 0.45rem;
+    font-size: 0.75rem;
+  }
+
+  .wordmark img {
+    width: 2.4rem;
   }
 }
 
