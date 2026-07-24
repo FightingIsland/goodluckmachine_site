@@ -52,6 +52,14 @@ p {
   text-wrap: pretty;
 }
 
+.section-blurb {
+  width: 100%;
+  max-width: 540px;
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
 .skip-link {
   position: fixed;
   z-index: 100;
@@ -180,9 +188,7 @@ h3 {
 }
 
 .hero-intro {
-  max-width: 590px;
   margin: 0;
-  font-size: clamp(1rem, 1.25vw, 1.2rem);
 }
 
 .scroll-cue {
@@ -258,9 +264,7 @@ h3 {
 }
 
 .games-copy p {
-  max-width: 540px;
   margin-bottom: 0;
-  font-size: clamp(1rem, 1.25vw, 1.2rem);
 }
 
 .about {
@@ -278,9 +282,7 @@ h3 {
 }
 
 .about-copy p {
-  max-width: 570px;
   margin: 1.75rem 0 0;
-  font-size: clamp(1rem, 1.25vw, 1.2rem);
 }
 
 .contact {
@@ -297,8 +299,7 @@ h3 {
 }
 
 .contact-copy > p {
-  max-width: 540px;
-  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  margin-bottom: 1rem;
 }
 
 .email-link {
