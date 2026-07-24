@@ -182,7 +182,7 @@ h3 {
 .hero-intro {
   max-width: 590px;
   margin: 0;
-  font-size: clamp(1rem, 1.25vw, 1.25rem);
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
 }
 
 .scroll-cue {
@@ -204,8 +204,10 @@ h3 {
   width: 1.7rem;
   height: 1.7rem;
   place-items: center;
-  border: 2px solid var(--ink);
+  border: 0;
   border-radius: 50%;
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .section-label {
@@ -258,7 +260,7 @@ h3 {
 .games-copy p {
   max-width: 540px;
   margin-bottom: 0;
-  font-size: clamp(1rem, 1.2vw, 1.18rem);
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
 }
 
 .about {
@@ -278,7 +280,7 @@ h3 {
 .about-copy p {
   max-width: 570px;
   margin: 1.75rem 0 0;
-  font-size: clamp(1rem, 1.4vw, 1.35rem);
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
 }
 
 .contact {
@@ -307,8 +309,6 @@ h3 {
   gap: 1rem;
   margin-top: 2.3rem;
   padding: 0.95rem 0;
-  border-top: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
   font-size: clamp(1rem, 1.8vw, 1.55rem);
   font-weight: 600;
   text-decoration: none;
@@ -328,12 +328,13 @@ h3 {
   align-items: baseline;
   justify-content: space-between;
   gap: 1rem;
-  margin-top: 1.25rem;
-  font-size: 0.82rem;
+  margin-top: 1.5rem;
+  font-size: clamp(1rem, 1.8vw, 1.55rem);
+  font-weight: 600;
 }
 
 .support-callout > span {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .support-callout a {
@@ -360,9 +361,19 @@ footer a {
 }
 
 .footer-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   text-transform: uppercase;
+}
+
+.footer-name img {
+  display: block;
+  width: 2.5rem;
+  height: auto;
+  filter: invert(1);
 }
 
 footer p {
